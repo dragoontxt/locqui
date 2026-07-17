@@ -1,0 +1,39 @@
+   <div class="owner-notes">
+      <p class="owner-notes-label">&#9656; the rest of this page is for you, not visitors &#9656;</p>
+
+      <div class="help-box">
+        <h3>Adding a new post (static/Neocities version)</h3>
+        <ol>
+          <li>Open <code>index.html</code>, scroll to the bottom <code>&lt;script&gt;</code>, and find the <code>posts</code> array inside <code>siteApp()</code>.</li>
+          <li>Copy one of the existing entries (the curly-brace objects) and paste it as a new item in the array.</li>
+          <li>Fill in the fields:
+            <ul>
+              <li><code>slug</code> — a short, unique, URL-safe id, e.g. <code>"entry-005"</code>. This also becomes the filename of its page.</li>
+              <li><code>title</code> — the entry's title.</li>
+              <li><code>date</code> — ISO format, <code>"YYYY-MM-DD"</code>, used for sorting and Save Data grouping.</li>
+              <li><code>display_date</code> — the human, flavor-text version shown on the page.</li>
+              <li><code>excerpt</code> — a short preview shown in the diary cards / Quest Log.</li>
+              <li><code>tags</code> — see below, this drives the World Map.</li>
+              <li><code>curated</code> — set to <code>true</code> to have it appear in the Item Bag.</li>
+              <li><code>note</code> — optional personal note, only shown in the Item Bag.</li>
+            </ul>
+          </li>
+          <li>Save <code>index.html</code>. The new entry appears automatically in the Status diary (if one of the two newest), Quest Log, Save Data, and the World Map.</li>
+          <li>Separately, copy an existing <code>entry-00X.html</code> file, rename it to <code>&lt;slug&gt;.html</code>, and swap in the title/date/tags/full text and the prev/next links at the bottom. This site is static now — there's no server generating that page for you, so it has to exist as its own file.</li>
+        </ol>
+      </div>
+
+      <div class="help-box">
+        <h3>How tagging works</h3>
+        <ol>
+          <li>Tags go in the <code>tags</code> array for each post, e.g. <code>["diary", "late-night"]</code>.</li>
+          <li>Every unique tag across all your posts automatically gets a fixed spot on the World Map — you never place these by hand.</li>
+          <li>A post's marker position is the average of its own tags' spots, so posts sharing a tag naturally land near each other.</li>
+          <li>Reusing a tag across posts is how you build clusters/relationships — there's no separate category or folder system to maintain.</li>
+          <li>A post can have as many tags as you like; more shared tags with another post pulls them closer together on the map.</li>
+          <li>Tags show up in two places, not one: as visible pill badges on the post's own page, and as the color-coded markers + legend on the World Map. They currently don't appear on the Quest Log rows or diary cards — see below.</li>
+        </ol>
+        <p class="help-tip">TIP: keep tags lowercase and consistent (e.g. always <code>late-night</code>, not sometimes <code>Late Night</code>) so posts actually cluster instead of scattering.</p>
+      </div>
+    </div>
+  </section>
